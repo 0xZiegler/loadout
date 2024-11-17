@@ -1,0 +1,23 @@
+[
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "editorTextFocus || sideBarFocus || explorerViewletVisible || !editorFocus"
+  },
+  {
+    "key": "ctrl+Shift+\\",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+Alt+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalHasBeenCreated && terminalFocus"
+  },
+
+  {
+    "key": "ctrl+Alt+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalHasBeenCreated && terminalFocus"
+  }
+]
