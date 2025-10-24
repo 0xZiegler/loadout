@@ -1,0 +1,106 @@
+PS1="\[\e[1;32m\]$~ \[\e[0m\]"
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias name='git config user.name'
+    alias email='git config user.email'
+    alias l="ls --group-directories-first"
+    alias ll='ls -lh --group-directories-first'
+    alias la='ls -alh --group-directories-first'
+    alias lsd='ls -d */'
+    alias copy='xclip -selection clipboard'
+    alias paste='xclip -selection clipboard -o'
+    alias x=exit
+
+    #git
+    alias gs='git status'
+    alias ga='git add'
+    alias gc='git commit'
+    alias gca='git commit -a'
+    alias gcm='git commit -m'
+    alias gp='git pull'
+    alias gpo='git push origin'
+    alias gb='git branch'
+    alias gba='git branch -a'
+    alias gco='git checkout'
+    alias gcb='git checkout -b'
+    alias gl='git log --oneline --graph --decorate --all'
+    alias gst='git stash'
+    alias gpop='git stash pop'
+    alias grep='grep --color=auto -n'
+    alias tree=tree_clean
+    alias gcl='git clone'
+
+    # Quickly search your history (interactive)
+    alias hgrep='history | grep'
+
+    # Simplify find + grep “search and replace” combo
+    # For example: fgrep txt *.log
+    alias fgrep='grep -R --color=auto'
+
+    # Show lines added/removed in a file with color
+    alias diffc='diff --color=auto'
+
+fi
+
+push() {
+    # Check if there are any edited (modified or staged) files
+    edited_files=$(git status --porcelain | grep '^[ M][ M]' | awk '{print $2}')
+
+    # If no edited files, exit early
+    if [ -z "$edited_files" ]; then
+        echo "No edited files to add"
+        return 1
+    fi
+
+    # Add only modified (not untracked) files
+    while read -r file; do
+    git add "$file"
+    done <<< "$edited_files"
+
+
+    # Prompt for commit message
+    echo -n "Commit message: "
+    read msg
+
+    # Commit and push
+    git commit -m "$msg"
+    git push
+}
+
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+tree_clean() {
+  find . -type d \
+    \( \
+      -name node_modules -o \
+      -name dist         -o \
+      -name build        -o \
+      -name .git         -o \
+      -name .next        -o \
+      -name .cache       -o \
+      -name coverage     -o \
+      -name .vscode      -o \
+      -name .idea        -o \
+      -name venv         -o \
+      -name .venv        -o \
+      -name __pycache__  -o \
+      -name target \
+    \) -prune -o \
+    -not -path '*/\.*' -print \
+  | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+}
+
+
+code() {
+  command /usr/bin/code "$@"
+  #once it returns -> exit
+  exit
+}
