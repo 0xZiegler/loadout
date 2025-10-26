@@ -2,7 +2,7 @@
   //activity bar
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
-  "editor.fontFamily": "'0xProto Nerd Font Mono', Fira Code,Operator Mono, Fira Code, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'0xProto Nerd Font', Fira Code,Operator Mono, Fira Code, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontFamily": "'JetBrains Mono', '0xProto Nerd Font', 'Fira Code', 'Inconsolata for Powerline', monospace",
   "editor.fontSize": 15.5,
   "editor.lineHeight": 20.4,
