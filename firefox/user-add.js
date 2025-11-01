@@ -61,3 +61,9 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("svg.context-properties.content.enabled", true); //for css theme
 user_pref("extensions.activeThemeID", "{08d5243b-4236-4a27-984b-1ded22ce01c3}"); //gruvbox theme
 user_pref("lightweightThemes.selectedThemeID", "{08d5243b-4236-4a27-984b-1ded22ce01c3}"); //to disable the default theme
+
+//sidebar: vertical tabs
+user_pref("sidebar.revamp", true);
+user_pref("sidebar.verticalTabs", true);
+//visible sidebar on startup
+user_pref("sidebar.visibility", "always");
