@@ -151,7 +151,7 @@ cp "$VS_CODE_SETTINGS_FILE" "$HOME/.config/Code/User/settings.json"
 
 code --install-extension ritwickdey.LiveServer >/dev/null 2>&1 || true
 code --install-extension golang.Go >/dev/null 2>&1 || true
-code --install-extension PKief.material-icon-theme >/dev/null 2>&1 || true
+code --install-extension PKief.material-product-icons >/dev/null 2>&1 || true
 code --install-extension yy0931.vscode-sqlite3-editor >/dev/null 2>&1 || true
 code --install-extension dbaeumer.vscode-eslint >/dev/null 2>&1 || true
 code --install-extension esbenp.prettier-vscode >/dev/null 2>&1 || true
