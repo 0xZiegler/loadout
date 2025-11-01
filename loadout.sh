@@ -126,7 +126,6 @@ append_source_if_missing() {
 }
 
 append_source_if_missing "$HOME/.bashrc"
-append_source_if_missing "$HOME/.zshrc"
 
 #remove any line starting with 'PS1=' first
 sed -i '/^PS1=/d' "$HOME/.bashrc" && \
