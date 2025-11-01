@@ -93,7 +93,7 @@ gsettings set org.gnome.desktop.interface font-name 'iosevka 12.5' >/dev/null 2>
 gsettings set org.gnome.desktop.interface document-font-name 'iosevka 13' >/dev/null 2>&1
 gsettings set org.gnome.desktop.interface monospace-font-name 'iosevka 13' >/dev/null 2>&1
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'iosevka Bold 13' >/dev/null 2>&1
-gsettings set "$base_path" font 'iosevka 13' >/dev/null 2>&1
+gsettings set "$base_path" font 'iosevka 14' >/dev/null 2>&1
 
 #restart the portal in case firefox is installed via Snap/Flatpak
 systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gnome 2>/dev/null || \
