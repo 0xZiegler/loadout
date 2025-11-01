@@ -18,7 +18,7 @@
   "editor.snippetSuggestions": "bottom",
   "editor.tabSize": 3,
   "workbench.startupEditor": "none",
-  "editor.glyphMargin": true,
+  "editor.glyphMargin": false,
   "workbench.editor.enablePreview": false,
   "explorer.confirmDragAndDrop": false,
   "breadcrumbs.enabled": true,
