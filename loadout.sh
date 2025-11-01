@@ -163,18 +163,20 @@ code --install-extension vscodevim.vim >/dev/null 2>&1 || true
 echo "firefox config..."
 rm -rf $HOME/user.js
 firefox --headless 1 >/dev/null &>2 &
-sleep 3
+sleep 1
 pkill firefox
 git clone https://github.com/arkenfox/user.js.git $HOME/user.js >/dev/null 2>&1
 PROFILE_DIR="$HOME/snap/firefox/common/.mozilla/firefox/$(grep -m 1 Path $HOME/snap/firefox/common/.mozilla/firefox/profiles.ini | cut -d'=' -f2)"
 cp $HOME/user.js/user.js "$PROFILE_DIR/user.js"
 cat $HOME/loadout/firefox/user-add.js >> "$PROFILE_DIR/user.js"
 
-mkdir -p "$PROFILE_DIR/chrome"
-rm -rf "$HOME/custom-firefox-css"
-git clone https://github.com/datguypiko/Firefox-Mod-Blur.git "$HOME/custom-firefox-css" >/dev/null 2>&1
-rm -rf "$PROFILE_DIR/chrome"/*
-cp -r "$HOME/custom-firefox-css"/* "$PROFILE_DIR/chrome/"
+if [ "${1:-}" = "css" ]; then
+  mkdir -p "$PROFILE_DIR/chrome"
+  rm -rf "$HOME/custom-firefox-css"
+  git clone https://github.com/datguypiko/Firefox-Mod-Blur.git "$HOME/custom-firefox-css" >/dev/null 2>&1
+  rm -rf "$PROFILE_DIR/chrome"/*
+  cp -r "$HOME/custom-firefox-css"/* "$PROFILE_DIR/chrome/"
+fi
 
 mkdir -p "$PROFILE_DIR/extensions"
 wget -q https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi -O ublock_origin.xpi
