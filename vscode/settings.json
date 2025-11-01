@@ -57,7 +57,7 @@
   "workbench.panel.defaultLocation": "bottom",
   "workbench.settings.editor": "ui",
   "editor.minimap.enabled": false,
-  "window.zoomLevel": 0.37,
+  "window.zoomLevel": 0.31,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
