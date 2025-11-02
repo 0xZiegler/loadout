@@ -14,7 +14,7 @@
 - vscode settings.json config + extensions
 - firefox config:
    - using [arkenfox](https://github.com/arkenfox/user.js) user.js
-   - and a custom [userChrome.css](https://github.com/datguypiko/Firefox-Mod-Blur)
+   - and a custom [userChrome.css](https://github.com/datguypiko/Firefox-Mod-Blur) **using the `css` flag**
 - gnome-terminal config
 - vim config
 - bash config
@@ -31,4 +31,8 @@
 2.
 ```bash
 sh loadout/loadout.bash
+```
+Or (with custom firefox css)
+```bash
+sh loadout/loadout.bash css
 ```
